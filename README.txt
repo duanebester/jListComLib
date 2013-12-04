@@ -1,3 +1,20 @@
-Java library for Mac that allows to list all the Arduino connected to the computer.
-Complete sources in src_mac/
+#README
+
+Java library for Mac and Windows that allows to list all the Arduino connected to the computer.
+Complete sources in:
+
+src_mac/ for the Mac version.
+src_win/ for the Windows version
+
+
 Test program and library binary in test/
+
+###Note:
+
+To compile under Windows use [MinGW](http://www.mingw.org/) and jdk are required 
+
+*command line*: g++ -Wall -D_JNI_IMPLEMENTATION_ -Wl,--kill-at  -I"C:\Program Files (x86)\Java\jdk1.7.0_40\include" -I"C:\Program Files (x86)\Java\jdk1.7.0_40\include\win32" -shared listCom_java.cpp -o listCom.dll -lsetupapi
+
+
+To compile under OSX use just use Xcode.
+
