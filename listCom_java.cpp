@@ -7,8 +7,19 @@
 //
 
 #include "listCom_java.h"
-#include "listCom.c"
+#ifdef WIN
 
+#include "src_win/listCom.c"
+
+#elif defined(MAC)
+
+#include "src_mac/listCom.c"
+
+#else
+
+#warning No platform specified
+
+#endif
 
 JNIEXPORT jobjectArray JNICALL Java_cc_arduino_serial_SerialLister_serialPortList(JNIEnv *env, jobject obj){
     
@@ -23,18 +34,15 @@ JNIEXPORT jobjectArray JNICALL Java_cc_arduino_serial_SerialLister_serialPortLis
     devices = GetSerialDevices();
     temp = devices;
     
-    while(devices!=NULL){
-        
-        len++;
-        devices=devices->next;
-                
-    }
+    len = *(devices->length);
     
     devices = temp;    
     index = 0;
     
+	//create the hash map
     jobjectArray devicesArray = env->NewObjectArray(len, env->FindClass("java/util/HashMap"),0);
 	
+	//populate the hash map
     while(devices!=NULL){
 	
         jobject mapObj = env->NewObject(mapClass,mapCtor,3);

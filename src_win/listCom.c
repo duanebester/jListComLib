@@ -4,7 +4,7 @@ email: scialabba.angelo@gmail.com
 On 04/12/2013
 -------------------------------**/
 
-stDeviceListItem* List()
+stDeviceListItem* GetSerialDevices()
 {
     HDEVINFO DevInfoHandle;
     SP_DEVINFO_DATA DevInfoData;
