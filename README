@@ -1,7 +1,9 @@
 # README
 
 Java library for Mac and Windows that allows to list all the Arduino connected to the computer.
-Complete sources in:
+
+Sources of the interface are jListCom_java.h/.cpp
+Platform dependant sources are respectively in:
 
 src_mac/ for the Mac version.
 src_win/ for the Windows version
