@@ -1,4 +1,4 @@
-import cc.arduino.serial.SerialLister;
+import cc.arduino.packages.discoverers.SerialLister;
 import java.util.HashMap;
 
 public class test {
