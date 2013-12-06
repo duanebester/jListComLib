@@ -21,7 +21,7 @@
 
 #endif
 
-JNIEXPORT jobjectArray JNICALL Java_cc_arduino_serial_SerialLister_serialPortList(JNIEnv *env, jobject obj){
+JNIEXPORT jobjectArray JNICALL Java_cc_arduino_packages_discoverers_SerialLister_serialPortList(JNIEnv *env, jobject obj){
     
     jclass mapClass = env->FindClass("java/util/HashMap");
     jmethodID mapCtor = env->GetMethodID(mapClass,"<init>","(I)V");    

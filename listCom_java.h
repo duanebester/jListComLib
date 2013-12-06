@@ -40,7 +40,7 @@ typedef struct DeviceListItem {
 extern "C" {
 #endif
 
-JNIEXPORT jobjectArray JNICALL Java_cc_arduino_serial_SerialLister_serialPortList(JNIEnv *env, jobject obj);
+JNIEXPORT jobjectArray JNICALL Java_cc_arduino_packages_discoverers_SerialLister_serialPortList(JNIEnv *env, jobject obj);
 
 #ifdef __cplusplus
 }
