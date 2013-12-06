@@ -32,6 +32,9 @@ JNIEXPORT jobjectArray JNICALL Java_cc_arduino_serial_SerialLister_serialPortLis
 	
 	len = 0;
     devices = GetSerialDevices();
+	
+	if (devices == NULL) return NULL;
+	
     temp = devices;
     
     len = *(devices->length);
