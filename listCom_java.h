@@ -9,6 +9,8 @@
 #ifndef __listCom__listCom__
 #define __listCom__listCom__
 
+#ifdef WIN
+
 #include <iostream>
 #include <stdio.h>
 #include <windows.h>
@@ -16,6 +18,17 @@
 #include <devguid.h>
 #include <regstr.h>
 #include <jni.h>
+
+#elif defined(MAC)
+
+#include <iostream>
+#include <JavaVM/jni.h>
+
+#else
+
+#warning No platform specified
+
+#endif
 
 
 #define MAXPATHLEN 1024

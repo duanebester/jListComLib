@@ -13,25 +13,6 @@
 #include <IOKit/usb/IOUSBLib.h>
 #include <IOKit/serial/IOSerialKeys.h>
 
-typedef struct SerialDevice {
-    char port[MAXPATHLEN];
-    char locationId[MAXPATHLEN];
-    char vendorId[MAXPATHLEN];
-    char productId[MAXPATHLEN];
-    char manufacturer[MAXPATHLEN];
-    char serialNumber[MAXPATHLEN];
-} stSerialDevice;
-
-
-typedef struct DeviceListItem {
-    struct SerialDevice value;
-    struct DeviceListItem *next;
-    int* length;
-} stDeviceListItem;
-
-
-
-
 
 static kern_return_t FindModems(io_iterator_t *matchingServices)
 {
